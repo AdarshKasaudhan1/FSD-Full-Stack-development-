@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Interest Calculator</title>
+    <style>
+       
+        body {
+            font-family: Arial;
+            background-color: lightgrey;
+            text-align: center;
+        }
+
+       
+        .calculator-box {
+            width: 300px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid blue;
+        }
+
+      
+        input {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+   
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simple Interest Calculator</h1>
+
+    <div class="calculator-box">
+        <p>Enter Amount:</p>
+        <input type="number" id="p_amt">
+        
+        <p>Enter Months:</p>
+        <input type="number" id="time">
+        
+        <p>Enter Rate (%):</p>
+        <input type="number" id="rate">
+
+        <button onclick="calculate()">Calculate Now</button>
+
+        <div id="result">
+            Results will show here...
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            var p = document.getElementById("p_amt").value;
+            var t = document.getElementById("time").value;
+            var r = document.getElementById("rate").value;
+            var interest = (p * t * r) / 100;
+            var total = Number(p) + interest;
+
+            document.getElementById("result").innerHTML = 
+
+                "Interest: " + interest + "<br>" +
+                "Total to Pay: " + total;
+        }
+    </script>
+
+</body>
+</html>
